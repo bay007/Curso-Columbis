@@ -8,3 +8,4 @@ PD: investiga el uso de la función input(), con ella podrás mejorar
 tu programa
 
 """
+print("EZC")
