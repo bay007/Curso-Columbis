@@ -16,6 +16,6 @@ materias = ["Español","Matematicas","Historia","Geografia", "Quimica", "Fisica"
 no_materias = 0
 
 for materia in materias:
-    no_materias += 1
-    
+    no_materias = no_materias +1
+
 print("El número de materias es:", no_materias)
