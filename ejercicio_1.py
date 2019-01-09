@@ -9,3 +9,4 @@ tu programa
 
 """
 print("hola")
+print("adios")
