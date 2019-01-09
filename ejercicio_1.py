@@ -8,4 +8,6 @@ PD: investiga el uso de la función input(), con ella podrás mejorar
 tu programa
 
 """
-print("EZC")
+print('Enter your name:')
+x = input()
+print('Hello, ' + x) 

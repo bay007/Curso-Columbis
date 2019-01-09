@@ -8,3 +8,5 @@ PD:Puedes usar la funcion input para mejorar tu programa,
 También se sugiere usar el uso del método en cadenas stip()
 
 """
+
+#Tarea
