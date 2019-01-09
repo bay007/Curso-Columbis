@@ -8,3 +8,11 @@ PD:Puedes usar la funcion input para mejorar tu programa,
 También se sugiere usar el uso del método en cadenas stip()
 
 """
+listas = input("Escriba un texto:")
+total = 0
+lista = 0
+for lista in listas:
+    #nueva_listas = listas.stip("")
+    #print(nueva_listas)
+    total = total + 1
+print(total)
