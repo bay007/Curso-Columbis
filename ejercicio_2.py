@@ -9,4 +9,13 @@ También se sugiere usar el uso del método en cadenas stip()
 
 """
 
-#Tarea
+#definir una variable para guardar la longitud
+
+materias = ["Español","Matematicas","Historia","Geografia", "Quimica", "Fisica"]
+
+no_materias = 0
+
+for materia in materias:
+    no_materias += 1
+    
+print("El número de materias es:", no_materias)
