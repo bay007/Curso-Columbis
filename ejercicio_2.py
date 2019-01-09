@@ -14,5 +14,3 @@ for elemento in lista:
     contador = contador + 1
 
 print(f"El numero de elementos en tu lista es {contador}")
-
- #print(f"(llave_comida) -- (valor_comida)")
