@@ -18,3 +18,15 @@ C          100
 D          500
 M          1,000
 """
+numero_romano = "III"
+
+dic = {
+    "I": 1
+}
+
+numero_decimal = 0
+
+for solo_romano in numero_romano:
+    numero_decimal += dic.get(solo_romano, 0)
+
+print(f"{numero_romano} equivale a {numero_decimal}")
