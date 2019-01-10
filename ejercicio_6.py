@@ -34,9 +34,6 @@ decimal_anterior = 0
 decimal = 0
 
 #cadena_romano = "MCMXC"
-#cadena_romano = "MMVIII"
-#cadena_romano = "MDCLXVI"
-cadena_romano = "MDLXXIX"
 
 for romano in cadena_romano:
     decimal   = numeros_romanos.get(romano, 0)
