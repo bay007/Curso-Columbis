@@ -10,6 +10,11 @@ tu programa
 """
 #MPALACIOS - PRIMER COMMIT
 
-name = input("¿Cuales tu nombre?")
-print("Gusto en conocerte: " + name + "!")
+ 
 
+for conteo in range(2): 
+    palabras[conteo] = input("¿Dame una palabra ?")
+
+
+
+print (palabras)
