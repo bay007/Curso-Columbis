@@ -18,3 +18,35 @@ C          100
 D          500
 M          1,000
 """
+
+dicionario_romano = {
+    "I": 1,
+    "V": 5,
+    "X": 10,
+    "L": 50,
+    "C": 100,
+    "D": 500,
+    "M": 1000
+}
+
+numeros_romanos = input("Escriba un número romano:")
+numero_romano_decimal = 0
+suma_decimal = 0
+numero_anterior = ""
+
+for numero_romano in numeros_romanos:
+
+    numero = numeros_romanos[numero_romano_decimal]
+    numero_decimal = dicionario_romano.get(numero)
+    numero_anterior = f"{numero_anterior}{numero}"
+    print(numero_anterior)
+    #print(numero_decimal)
+    if numero_anterior is ("CM" or "XC" or "IX"): 
+        suma_decimal = numero_decimal - suma_decimal
+    else:
+        suma_decimal = numero_decimal + suma_decimal
+    #print(suma_decimal)
+    numero_romano_decimal = numero_romano_decimal + 1
+    numero_anterior = f"{numero}"
+    
+print(suma_decimal)
