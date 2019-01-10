@@ -12,7 +12,7 @@ listas = input("Escriba un texto:")
 total = 0
 lista = 0
 for lista in listas:
-    #nueva_listas = listas.stip("")
+    a = listas.stip()
     #print(nueva_listas)
     total = total + 1
 print(total)
