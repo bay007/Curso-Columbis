@@ -39,7 +39,6 @@ D          500
 M          1,000
 """
 
-<<<<<<< Updated upstream
 numeros_romanos = {
     "I" : 1,
     "V" : 5,
@@ -72,33 +71,3 @@ for romano in cadena_romano:
 valor_decimal = sum(lista_decimal)
 
 print(f"El número romano {cadena_romano} equivale en decimal a: {valor_decimal}")
-=======
-numeros_base = {    "I":1,
-                    "V":5,
-                    "X":10,
-                    "L":50,
-                    "C":100,
-                    "D":500,
-                    "M":1000}
-
-
-numero_romano = input("¿Dame una numero romano?")
-
-
-tamanio = len (numero_romano) 
-
-for conteo_letras in range(tamanio):
-    print(conteo_letras)
-    ls_letra = numero_romano[:1] 
-    print(ls_letra)
-    obt_numero = numeros_base.get(ls_letra) 
-    
-    
-    
-
-"""
-for numero in numeros_base.items():
-    
-    obt_numero = numeros_base.get(numero_romano)
-    """
->>>>>>> Stashed changes
