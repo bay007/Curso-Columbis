@@ -29,6 +29,8 @@ dicionario_romano = {
     "M": 1000
 }
 
+lista_menos = ("CM", "XC", "IX")
+
 numeros_romanos = input("Escriba un número romano:")
 numero_romano_decimal = 0
 suma_decimal = 0
@@ -38,10 +40,11 @@ for numero_romano in numeros_romanos:
 
     numero = numeros_romanos[numero_romano_decimal]
     numero_decimal = dicionario_romano.get(numero)
-    numero_anterior = f"{numero_anterior}{numero}"
+    numero_anterior = numero_anterior+numero
     print(numero_anterior)
     #print(numero_decimal)
-    if numero_anterior is ("CM" or "XC" or "IX"): 
+    if numero_anterior in lista_menos: 
+    #if numero_anterior == "IX": 
         suma_decimal = numero_decimal - suma_decimal
     else:
         suma_decimal = numero_decimal + suma_decimal
