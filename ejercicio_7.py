@@ -2,12 +2,12 @@
 ## Modificar odas las variables de modo que todas las expresiones sean True. ##
 ###############################################################################
 
-var1 =
-var6 =
-var2 =
-var3 =
-var4 =
-var5 =
+var1 = None
+var2 = None
+var3 = None
+var4 = None
+var5 = None
+var6 = None
 
 ##############################################
 ## No editar nada debajo de éste ocmentario ##
