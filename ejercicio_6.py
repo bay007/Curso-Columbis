@@ -18,15 +18,34 @@ C          100
 D          500
 M          1,000
 """
-numero_romano = "III"
 
-dic = {
-    "I": 1
+numeros_romanos = {
+    "I": 1,
+    "V": 5,
+    "X": 10,
+    "L": 50,
+    "C": 100,
+    "D": 500,
+    "M": 1000
 }
 
-numero_decimal = 0
+lista_decimal = [0]
+decimal_anterior = 0
+decimal = 0
 
-for solo_romano in numero_romano:
-    numero_decimal += dic.get(solo_romano, 0)
+cadena_romano = "MCMXC"
 
-print(f"{numero_romano} equivale a {numero_decimal}")
+for romano in cadena_romano:
+    decimal = numeros_romanos.get(romano, 0)
+
+    if decimal_anterior >= decimal:
+        lista_decimal.append(decimal)
+    else:
+        lista_decimal.pop()
+        lista_decimal.append(decimal - decimal_anterior)
+    decimal_anterior = decimal
+
+valor_decimal = sum(lista_decimal)
+
+print(
+    f"El número romano {cadena_romano} equivale en decimal a: {valor_decimal}")
