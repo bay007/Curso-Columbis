@@ -8,11 +8,12 @@ PD:Puedes usar la funcion input para mejorar tu programa,
 También se sugiere usar el uso del método en cadenas strip()
 
 """
-lista_paises = ["Corea del sur","Londres","Japón","Italia","Grecia"]
 
-print(f"Los paises son: {lista_paises}")
-conteo = 0
-for lista_pais in lista_paises:
-    conteo = conteo + 1
+numeros_pares = [2,4,6,8,10,12,14]
+elementos = 0
 
-print(f"Tienes  {conteo}  elementos" )
+for numero_par in numeros_pares:
+    elementos = elementos + 1
+
+print (f"La lista tiene {elementos} números")
+

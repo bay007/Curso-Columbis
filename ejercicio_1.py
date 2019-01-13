@@ -8,13 +8,6 @@ PD: investiga el uso de la función input(), con ella podrás mejorar
 tu programa
 
 """
-#MPALACIOS - PRIMER COMMIT
-
- 
-
-for conteo in range(2): 
-    palabras[conteo] = input("¿Dame una palabra ?")
 
 
-
-print (palabras)
+#Este es mi primer commit nancy
