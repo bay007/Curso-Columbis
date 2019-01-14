@@ -29,27 +29,31 @@ dicionario_romano = {
     "M": 1000
 }
 
-lista_menos = ("CM", "XC", "IX")
+def romano():
 
-numeros_romanos = input("Escriba un número romano:")
-numero_romano_decimal = 0
-suma_decimal = 0
-numero_anterior = ""
+    lista_menos = ("CM", "XC", "IX")
 
-for numero_romano in numeros_romanos:
+    numeros_romanos = input("Escriba un número romano:")
+    numero_romano_decimal = 0
+    suma_decimal = 0
+    numero_anterior = ""
 
-    numero = numeros_romanos[numero_romano_decimal]
-    numero_decimal = dicionario_romano.get(numero)
-    numero_anterior = numero_anterior+numero
-    print(numero_anterior)
-    #print(numero_decimal)
-    if numero_anterior in lista_menos: 
-    #if numero_anterior == "IX": 
-        suma_decimal = numero_decimal - suma_decimal
-    else:
-        suma_decimal = numero_decimal + suma_decimal
-    #print(suma_decimal)
-    numero_romano_decimal = numero_romano_decimal + 1
-    numero_anterior = f"{numero}"
-    
-print(suma_decimal)
+    for numero_romano in numeros_romanos:
+
+        numero = numeros_romanos[numero_romano_decimal]
+        numero_decimal = dicionario_romano.get(numero)
+        numero_anterior = numero_anterior+numero
+        print(numero_anterior)
+        #print(numero_decimal)
+        if numero_anterior in lista_menos: 
+        #if numero_anterior == "IX": 
+            suma_decimal = numero_decimal - suma_decimal
+        else:
+            suma_decimal = numero_decimal + suma_decimal
+        #print(suma_decimal)
+        numero_romano_decimal = numero_romano_decimal + 1
+        numero_anterior = f"{numero}"
+        
+    print(suma_decimal)
+
+romano()
