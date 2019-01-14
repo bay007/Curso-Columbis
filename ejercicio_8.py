@@ -6,3 +6,12 @@ PD: Para éste ejemplo  hay que hacer uso del módulo random
 https://docs.python.org/3.7/library/random.html
 
 """
+import random
+
+
+def lanzar():
+    dado_lanzado = 1+random.random()*6
+    return int(dado_lanzado)
+
+
+print(f"Dado lanzado, resultado: {lanzar()}")
