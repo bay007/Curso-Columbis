@@ -1,5 +1,5 @@
-import operaciones.basicas
+import operaciones
 
 
-s = operaciones.basicas.suma(8, 7)
+s = operaciones.suma
 print(s)
