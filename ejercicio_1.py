@@ -10,3 +10,16 @@ tu programa
 """
 """hola_commit1"""
 
+primera_palabra = input("Escriba la primera palabra a comparar: ")
+segunda_palabra = input("Escriba la segunda palabra a comparar: ")
+
+slicing_primera = primera_palabra[-3:]
+slicing_segunda = segunda_palabra[-3:]
+
+#print(slicing_primera)
+#print(slicing_segunda)
+
+if slicing_primera == slicing_segunda:
+    print("Riman")
+else:
+    print("No riman")
