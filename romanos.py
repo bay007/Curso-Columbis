@@ -1,4 +1,4 @@
-def obtiene_romano(*args):
+def obtiene_romano(args):
         numeros_romanos = {
             "I" : 1,
             "V" : 5,
