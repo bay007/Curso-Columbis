@@ -18,33 +18,36 @@ C          100
 D          500
 M          1,000
 """
+def romano_a_decimal(cadena_romano):
+    numeros_romanos = {
+        "I" : 1,
+        "V" : 5,
+        "X" : 10,
+        "L" : 50,
+        "C" : 100,
+        "D" : 500,
+        "M" : 1000
+    }
 
-numeros_romanos = {
-    "I" : 1,
-    "V" : 5,
-    "X" : 10,
-    "L" : 50,
-    "C" : 100,
-    "D" : 500,
-    "M" : 1000
-}
+    lista_decimal = [0]
+    decimal_anterior = 0
+    decimal = 0
 
-lista_decimal = [0]
-decimal_anterior = 0
-decimal = 0
+    for romano in cadena_romano:
+        decimal   = numeros_romanos.get(romano, 0)
+        
+        if decimal_anterior >= decimal:
+            lista_decimal.append(decimal)
+        else:
+            lista_decimal.pop()
+            lista_decimal.append(decimal - decimal_anterior)
+        decimal_anterior = decimal
 
-cadena_romano = "MCMXC"
+    valor_decimal = sum(lista_decimal)
+    return valor_decimal
 
-for romano in cadena_romano:
-    decimal   = numeros_romanos.get(romano, 0)
-    
-    if decimal_anterior >= decimal:
-        lista_decimal.append(decimal)
-    else:
-        lista_decimal.pop()
-        lista_decimal.append(decimal - decimal_anterior)
-    decimal_anterior = decimal
 
-valor_decimal = sum(lista_decimal)
+numero_romano = "MDCLXVI"
+numero_decimal = romano_a_decimal(numero_romano)
 
-print(f"El número romano {cadena_romano} equivale en decimal a: {valor_decimal}")
+print(f"El número romano {numero_romano} equivale en decimal a: {numero_decimal}")

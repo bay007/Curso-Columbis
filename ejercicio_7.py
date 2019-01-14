@@ -2,12 +2,12 @@
 ## Modificar odas las variables de modo que todas las expresiones sean True. ##
 ###############################################################################
 
-var1 = None
-var2 = None
-var3 = None
-var4 = None
-var5 = None
-var6 = None
+var1 = 30
+var2 = "puedan"
+var3 = [1, 2, 3, 4, 5]
+var4 = ("Hasta la vista", "Bye", "Hello, Python!")
+var5 = {"tuna":"chicken", "egg":"salad", "happy":7}
+var6 = 30.5
 
 ##############################################
 ## No editar nada debajo de éste ocmentario ##
