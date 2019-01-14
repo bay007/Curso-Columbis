@@ -19,43 +19,65 @@ D          500
 M          1,000
 """
 
-numeros_romanos = {
-    "I" : 1,
-    "V" : 5,
-    "X" : 10,
-    "L" : 50,
-    "C" : 100,
-    "D" : 500,
-    "M" : 1000
-}
+numeros_base = {    "I":1,
+                    "V":5,
+                    "X":10,
+                    "L":50,
+                    "C":100,
+                    "D":500,
+                    "M":1000}
 
-lista_decimal = [0]
-decimal_anterior = 0
-decimal = 0
 
-<<<<<<< HEAD
-#cadena_romano = "MCMXC"
-#cadena_romano = "MMVIII"
-#cadena_romano = "MDCLXVI"
-cadena_romano = "MDLXXIX"
-=======
-cadena_romano = "MCMXC"
->>>>>>> master
+numero_romano = input("¿Dame una numero romano?")
 
-for romano in cadena_romano:
-    decimal   = numeros_romanos.get(romano, 0)
+
+tamanio = len (numero_romano) 
+obt_numero_ant = 0
+print(tamanio)
+
+if tamanio == 1:
+     
+        obt_numero = numeros_base.get(numero_romano)
+else:
+    for conteo_letras in range(tamanio): 
+        ls_caracter = numero_romano[conteo_letras]
+        print(f"caracter: {ls_caracter}") 
+        obt_numero = numeros_base.get(ls_caracter)
+        print(obt_numero)
+
+        if obt_numero_ant > obt_numero:
+            obt_numero = obt_numero - obt_numero_ant
+            print(obt_numero)
+        else:
+            obt_numero = obt_numero + obt_numero_ant
+            print(obt_numero)
+
     
-    if decimal_anterior >= decimal:
-        lista_decimal.append(decimal)
-    else:
-        lista_decimal.pop()
-        lista_decimal.append(decimal - decimal_anterior)
-    decimal_anterior = decimal
 
-valor_decimal = sum(lista_decimal)
 
-<<<<<<< HEAD
-print(f"El número romano {cadena_romano} equivale en decimal a: {valor_decimal}")
-=======
-print(f"El número romano {cadena_romano} equivale en decimal a: {valor_decimal}")
->>>>>>> master
+
+"""
+for conteo_letras in range(tamanio):   
+   
+    if tamanio > 1:
+        if obt_numero_ant <= obt_numero_act:
+            obt_numero_act = obt_numero_act - obt_numero_ant
+        else:
+            obt_numero_act = obt_numero_act + obt_numero_ant
+
+        obt_numero_ant = obt_numero_act
+        print(obt_numero_act)
+    
+    else:    
+        print(conteo_letras)
+        obt_numero_act = numeros_base.get(conteo_letras) 
+
+
+
+print(obt_numero_act)
+
+ 
+for numero in numeros_base.items(): 
+    obt_numero = numeros_base.get(numero_romano)
+ 
+"""
