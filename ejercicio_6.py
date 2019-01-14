@@ -18,3 +18,38 @@ C          100
 D          500
 M          1,000
 """
+num_romano = "MCMXC"
+
+def f_romanos_arabigos(num_romano):
+    numeros_romanos = {
+    "I" : 1,
+    "V" : 5,
+    "X" : 10,
+    "L" : 50,
+    "C" : 100,
+    "D" : 500,
+    "M" : 1000
+    }
+
+    lista_decimal = [0]
+    decimal_anterior = 0
+    decimal = 0
+
+    cadena_romano =num_romano 
+    #"MCMXC"
+    
+    for romano in cadena_romano:
+        decimal   = numeros_romanos.get(romano, 0)
+
+    if decimal_anterior >= decimal:
+        lista_decimal.append(decimal)
+    else:
+        lista_decimal.pop()
+        lista_decimal.append(decimal - decimal_anterior)
+    decimal_anterior = decimal
+
+    valor_decimal = sum(lista_decimal)
+    return valor_decimal
+
+#Usando Funcion
+print(f"El número romano {num_romano} equivale en decimal a: {f_romanos_arabigos(num_romano)}")  

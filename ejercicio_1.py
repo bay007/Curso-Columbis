@@ -8,6 +8,23 @@ PD: investiga el uso de la función input(), con ella podrás mejorar
 tu programa
 
 """
-print('Enter your name:')
-x = input()
-print('Hello, ' + x) 
+print("Ingrese la 1er palabra")
+primer_palabra = input()
+
+print("Ingrese la 2a palabra")
+segunda_palabra = input()
+
+def riman (palabra1,palabra2):
+    if palabra1[-3:] == palabra2[-3:]:
+        es_rima = "Riman."
+    elif palabra1[-2:] == palabra2[-2:] :
+        es_rima = "Riman un poco."
+    else:
+        es_rima = " No riman"
+
+    return es_rima
+
+rima = riman(primer_palabra,segunda_palabra)
+
+print (f"Las palabras:  {primer_palabra} y {segunda_palabra} {rima}")
+
