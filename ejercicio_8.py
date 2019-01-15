@@ -6,3 +6,12 @@ PD: Para éste ejemplo  hay que hacer uso del módulo random
 https://docs.python.org/3.7/library/random.html
 
 """
+ 
+import random
+
+def lanzar_dado():
+    numero = random.randrange(1, 7, 1)
+    return numero
+
+print(f"El dado arroja el valor : {lanzar_dado()}")
+
