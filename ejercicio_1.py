@@ -9,5 +9,15 @@ tu programa
 
 """
 
+def riman(palabra1, palabra2):
+    if palabra1[-3::].upper() in palabra2[-3::].upper():
+        return "Las palabras si riman"
+    elif palabra1[-2::].upper() in palabra2[-2::].upper():
+        return "Las palabras casi riman"
+    else:
+        return "Las palabras no riman"
 
-#Este es mi primer commit nancy
+palabra_1 = input("Proporcione la primer palabra: ")
+palabra_2 = input("Proporcione la segunda palabra: ")
+
+print (riman(palabra_1, palabra_2))
