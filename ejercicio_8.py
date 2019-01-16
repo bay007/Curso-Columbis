@@ -6,3 +6,7 @@ PD: Para éste ejemplo  hay que hacer uso del módulo random
 https://docs.python.org/3.7/library/random.html
 
 """
+from random import randrange
+
+a = randrange(1,7,1)
+print(a)
