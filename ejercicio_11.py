@@ -30,17 +30,18 @@ import pprint
 pp = pprint.PrettyPrinter(indent=4)
 
 fake = Faker('es_MX')
-directorio = []
 
-def genera_info(num_personas):
+def genera_info(num_personas=1):
+    directorio = []
     for x in range(num_personas):
         persona = {}
         persona.update({"nombre": fake.name()})
         persona.update({"direccion_fisica" : fake.address()})
         persona.update({"direccion_postal": fake.address()})
         directorio.append(persona)
+    return directorio
 
 personas = int(input("Proporcione el número de personas: "))
-genera_info(personas)
+contactos = genera_info(personas)
 print(f"La información generada es : ")
-pp.pprint(directorio)
+pp.pprint(contactos)
