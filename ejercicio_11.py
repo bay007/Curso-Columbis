@@ -11,3 +11,26 @@ PD: Se sugiere hacer uso del paquete Faker.
 En su linea de comandos ejecute
 pip install Faker
 """
+from faker import Faker
+import pprint
+import json
+
+fake = Faker('es_MX')
+
+#print(fake.name())
+
+#print(fake.address())
+
+
+for dato in range(3):
+    datos = {'nombre': fake.name(), 
+        'dirección_postal': fake.address() ,
+        'direccion_fiscal': fake.address()
+        }
+
+json1 = json.dumps(datos)
+
+print ("[" +json1 +"]")
+
+
+
