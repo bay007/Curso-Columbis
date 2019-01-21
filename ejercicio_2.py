@@ -8,12 +8,21 @@ PD:Puedes usar la funcion input para mejorar tu programa,
 También se sugiere usar el uso del método en cadenas strip()
 
 """
-
-numeros_pares = [2,4,6,8,10,12,14]
-elementos = 0
-
-for numero_par in numeros_pares:
-    elementos = elementos + 1
-
-print (f"La lista tiene {elementos} números")
-
+cont = 0
+tipo = input("Desea una Cadena(C) o una Lista (L)")
+tipo = str.upper(tipo)
+if tipo == 'C' or tipo == 'L':    
+    if tipo == 'C':
+        datos = input("Introduzca los datos: ")
+        cadena = datos.strip()
+        for x in cadena:
+            cont = cont + 1
+        print(f"La longitud de la Cadena: '{cadena}' es: {str(cont)}")
+    else:
+        datos = input("Introduzca la lista (los elemenos separados por espacio): ")
+        lista = datos.split()
+        for x in lista:
+            cont = cont + 1
+        print(f"La longitud de la Lista es: '{lista}' es: {str(cont)}")
+else:
+    print("No capturó un valor válido.")
