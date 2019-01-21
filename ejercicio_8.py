@@ -7,6 +7,8 @@ https://docs.python.org/3.7/library/random.html
 
 """
 from random import randrange
+def lanza_dado():
+    a = randrange(1,7,1)
+    return(a)
 
-a = randrange(1,7,1)
-print(a)
+print(lanza_dado())
