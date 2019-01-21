@@ -6,3 +6,12 @@ PD: Para éste ejemplo  hay que hacer uso del módulo random
 https://docs.python.org/3.7/library/random.html
 
 """
+import random
+
+def tira_dado():
+    dado = random.randint(0,6)
+    return dado
+
+
+resultado = tira_dado()
+print(resultado) 

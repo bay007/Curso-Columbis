@@ -21,19 +21,25 @@ import json
 def obten_datos_persona(num_datos):
     num = 0
     fake = Faker('') 
-    datos = ""
+
+    lista_datos = []
     
     for dato in range(int(num_datos)):
         num = num + 1
-        lista_datos = {"id": num,
-                        "Nombre": fake.name(),
-                        "Direccion_pos":fake.address(),
-                        "Direccion_fiscal":fake.address()}
-        print(lista_datos)
-        datos = datos + str(lista_datos)
-    return datos
+        
+        numero = "{id:"+ str(num)
+        lista_datos.append(numero)
+        nombre = "Nombre:" + fake.name()
+        lista_datos.append(nombre) 
+        dir_pos = "Direccion_pos:"+fake.address()
+        lista_datos.append(dir_pos)
+        dir_fis = "Direccion_fiscal:"+fake.address()         
+        lista_datos.append(dir_fis)
+        lista_datos.append("}")
+    return lista_datos
  
 
 resultado =  obten_datos_persona(input("¿Cuantos datos quieres obtener?"))
+
 
 print(json.dumps(resultado, indent = 3))
