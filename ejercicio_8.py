@@ -9,7 +9,7 @@ https://docs.python.org/3.7/library/random.html
 import random
 
 def tira_dado():
-    dado = random.randint(0,6)
+    dado = random.randint(1,6)
     return dado
 
 

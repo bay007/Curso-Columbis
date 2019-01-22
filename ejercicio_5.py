@@ -12,11 +12,9 @@ def promedio(*args):
     return resultado
 """
 def promedio(*args):
-    print (args)
-    for numero in args:
-        print (numero) 
-    #resultado = sum(args)/len(args)
-    #return resultado
+    #print (args)
+    resultado = sum(args)/len(args)
+    return resultado
 
 resultado = promedio(3,5,6,7,12)
 print(f"El promedio es: {resultado}")
