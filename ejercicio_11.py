@@ -21,16 +21,21 @@ fake = Faker('es_MX')
 
 #print(fake.address())
 
+def genera_info(num_personas):
+    pp = pprint.PrettyPrinter(indent=4)
+    directorio = []
+    for x in range(num_personas):
+        persona = {}
+        persona.update({"nombre": fake.name()})
+        persona.update({"direccion_fiscal" : fake.address()})
+        persona.update({"direccion_postal": fake.address()})
+        directorio.append(persona)
+        
+        pp.pprint(directorio)
 
-for dato in range(3):
-    datos = {'nombre': fake.name(), 
-        'dirección_postal': fake.address() ,
-        'direccion_fiscal': fake.address()
-        }
+personas = int(input("Proporcione el número de personas: "))
+genera_info(personas)
 
-json1 = json.dumps(datos)
-
-print ("[" +json1 +"]")
 
 
 
