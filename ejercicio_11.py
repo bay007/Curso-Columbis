@@ -31,7 +31,7 @@ def genera_info(num_personas):
         persona.update({"direccion_postal": fake.address()})
         directorio.append(persona)
         
-        pp.pprint(directorio)
+        return directorio
 
 personas = int(input("Proporcione el número de personas: "))
 genera_info(personas)
