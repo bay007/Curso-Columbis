@@ -33,8 +33,10 @@ def genera_info(num_personas):
         
         return directorio
 
-personas = int(input("Proporcione el número de personas: "))
-genera_info(personas)
+
+if __name__ == "__main__":
+    personas = int(input("Proporcione el número de personas: "))
+    print(genera_info(personas))
 
 
 
