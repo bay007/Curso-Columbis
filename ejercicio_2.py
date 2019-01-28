@@ -9,7 +9,6 @@ También se sugiere usar el uso del método en cadenas strip()
 
 """
 
-<<<<<<< HEAD
 def contador_palabras():
   listas = input("Escriba un texto:")
   total = 0
@@ -18,13 +17,3 @@ def contador_palabras():
   print(total)
 
 contador_palabras()
-=======
-numeros_pares = [2,4,6,8,10,12,14]
-elementos = 0
-
-for numero_par in numeros_pares:
-    elementos = elementos + 1
-
-print (f"La lista tiene {elementos} números")
-
->>>>>>> master

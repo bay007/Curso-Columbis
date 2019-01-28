@@ -25,17 +25,14 @@ def pf(numeros_pf = 1):
         name = fake.name()
         address = fake.address()
         address2 = fake.address()
-        '''personas = {'nombre': name,
-                    'direccion_fisica': address,
-                    'direccion_postal': address2}'''
         personas = {'nombre': name,
                     'direccion_fisica': address,
                     'direccion_postal': address2}
         personas_json.append(personas)
         #print(personas)
-    print(json.dumps(personas_json, indent=4))
     print(len(personas_json))
+    print(json.dumps(personas_json, indent=4))
+    return(pf)
 
 pf()
-
 

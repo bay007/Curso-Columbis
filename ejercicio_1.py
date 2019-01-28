@@ -8,7 +8,6 @@ PD: investiga el uso de la función input(), con ella podrás mejorar
 tu programa
 
 """
-<<<<<<< HEAD
 """hola_commit1"""
 
 primera_palabra = input("Escriba la primera palabra a comparar: ")
@@ -24,8 +23,3 @@ if slicing_primera == slicing_segunda:
     print("Riman")
 else:
     print("No riman")
-=======
-
-
-#Este es mi primer commit nancy
->>>>>>> master
