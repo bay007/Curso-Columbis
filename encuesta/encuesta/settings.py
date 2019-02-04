@@ -42,6 +42,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     # Un framework para la gestión de archivos estáticos.
     'django.contrib.staticfiles',
+    # Aqui las apps del proyecto
+    'votacion'
 ]
 
 MIDDLEWARE = [
