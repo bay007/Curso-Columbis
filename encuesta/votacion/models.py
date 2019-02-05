@@ -10,6 +10,9 @@ class Question(models.Model):
     question_text = models.CharField(max_length=200)
     publish_date = models.DateTimeField(default=datetime.now)
 
+    def __str__(self):
+        return f"{str(self.uuid)[:5]}__{self.question_text[:10] }"
+
 
 class Choice(models.Model):
     uuid = models.UUIDField(
@@ -17,3 +20,6 @@ class Choice(models.Model):
     choice_text = models.CharField(max_length=100)
     votes = models.IntegerField(default=0)
     question = models.ForeignKey(Question, on_delete=models.CASCADE)
+
+    def __str__(self):
+        return f"{str(self.uuid)[:5]}__{self.choice_text[:10] }"
