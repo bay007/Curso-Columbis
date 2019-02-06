@@ -57,6 +57,13 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'encuesta.urls'
 
+# Al ser un marco web, Django necesita una forma conveniente de
+# generar HTML dinámicamente.El enfoque más común se basa
+# en plantillas.Una plantilla contiene las partes estáticas de la
+# salida HTML deseada, así como una sintaxis especial que
+# describe cómo se insertará el contenido dinámico.
+
+
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',

@@ -1,5 +1,6 @@
 import json
 
+from django.db.models import Sum
 from django.http import HttpResponse
 from django.shortcuts import render
 from django.views import View
@@ -16,7 +17,16 @@ class VotacionView_claquiernombre(View):
         # validacion de los mismos
         # escritura de bases de datos.
         # Etc, Etc , Etc
-        return HttpResponse("<h1>Hola Mundo</h1>")
+        questions = Question.objects.all()
+        questions = questions.order_by("-uuid")
+
+        votes = Question.objects.values('uuid').all()
+        votes = votes.annotate(Sum('choice__votes'))
+        votes = votes.order_by("-uuid")
+
+        votes = [v.get("choice__votes__sum") for v in votes]
+        contexto = {"questions_votes": zip(questions, votes)}
+        return render(request, "read.html", context=contexto)
 
     def post(self, request):
         pass
