@@ -14,10 +14,15 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path, include
+from django.urls import include, path
+
+from api.urls import urlpatterns as api_urls
 from votacion.urls import urlpatterns as votacion_urls
 
+# Se genera el path que hará manejo del contexto de la api
+# así como el versionado de la misma
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('votacion/', include(votacion_urls))
+    path('votacion/', include(votacion_urls)),
+    path('votacion/api/v1/', include(api_urls))
 ]
