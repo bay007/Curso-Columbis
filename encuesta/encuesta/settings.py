@@ -42,6 +42,10 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     # Un framework para la gestión de archivos estáticos.
     'django.contrib.staticfiles',
+    # Agregar la nueva app generada para manejar la api
+    'api',
+    # Instalar django rest framework
+    'rest_framework',
     # Aqui las apps del proyecto
     'votacion'
 ]
