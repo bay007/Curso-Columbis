@@ -16,4 +16,4 @@ class ChoiceSerializer(serializers.ModelSerializer):
 class QuestionSerializer(serializers.ModelSerializer):
     class Meta:
         model = Question
-        fields = ('question_text', 'publish_date', )
+        fields = ('uuid', 'question_text', 'publish_date', )
