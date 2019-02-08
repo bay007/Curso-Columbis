@@ -1,15 +1,35 @@
 from django.shortcuts import get_object_or_404, render
 
-from rest_framework import status
+from rest_framework import generics, status
+from rest_framework.generics import GenericAPIView
 from rest_framework.response import Response
-
-from rest_framework.views import APIView
+from rest_framework import generics
 from votacion.models import Choice, Question
 
 from .serializers import ChoiceSerializer, QuestionSerializer
 
 
-class QuestionList(APIView):
+class QuestionList(GenericAPIView):
+    # para trabajar con la GenericAPIView siempre hay que decirle el serializador que debe ser asociado
+    # con la clase, ésto es muy útil para la interfaz de django rest ya que deduce los tipos de datos
+    # tambien herramientas de documentacion  hace uso de la informacion del serializador asociado
+    # para deducir el tipo de dato
+    serializer_class = QuestionSerializer
+
+    # Un QuerySet representa una colección de objetos de su base de datos.
+    # Puede tener cero, uno o muchos filtros.
+    # Los filtros reducen los resultados de la consulta según los parámetros dados.
+    # En términos de SQL, un QuerySet equivale a una instrucción SELECT,
+    # y un filtro es una cláusula limitante como WHERE o LIMIT.
+    # Obtiene un QuerySet utilizando el Manager de su modelo.
+    # Cada modelo tiene al menos un Manager y se denomina objects de forma predeterminada.
+    # ¿Te es familiar TuModelo.objects?      Ese objects es el manager que tiene un tipo de dato QuerySet
+    # Aquí le decimos que la case
+    # Devuelve el conjunto de consultas que se debe usar para las vistas de lista,
+    # y que se debe usar como base para las búsquedas en vistas detalladas.
+    def get_queryset(self):
+        return Question.objects.all()
+
     def get(self, request):
         questions = Question.objects.all()
         # Aqui va el argumento many=True por que se espera mas de un elemento
@@ -26,7 +46,12 @@ class QuestionList(APIView):
         return Response(new_question.errors, status=status.HTTP_400_BAD_REQUEST)
 
 
-class QuestionDetail(APIView):
+class QuestionDetail(GenericAPIView):
+    serializer_class = QuestionSerializer
+
+    def get_queryset(self):
+        return Question.objscts.all()
+
     def get(self, request, pk):
         question = get_object_or_404(Question, uuid=pk)
         # Aqui NO va el argumento many por que se espera un y solo un elemento
@@ -50,21 +75,23 @@ class QuestionDetail(APIView):
 
 """Comentar las clases de arriba ambas y descomentar las dos de abajo"""
 # class QuestionList(generics.ListCreateAPIView):
-# queryset = Question.objects.all()
-# serializer_class = QuestionSerializer
+#     queryset = Question.objects.all()
+#     serializer_class = QuestionSerializer
 
 
 # class QuestionDetail(generics.RetrieveUpdateDestroyAPIView):
-# queryset = Question.objects.all()
-# serializer_class = QuestionSerializer
+#     queryset = Question.objects.all()
+#     serializer_class = QuestionSerializer
 
 
-class ChoiceList(APIView):
+class ChoiceList(GenericAPIView):
+    serializer_class = ChoiceSerializer
+
     def get(self, request):
         choices = Choice.objects.all()
         serialized_choices = ChoiceSerializer(choices, many=True).data
         return Response(serialized_choices)
 
 
-class ChoiceDetail(APIView):
+class ChoiceDetail(GenericAPIView):
     pass
