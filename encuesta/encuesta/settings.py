@@ -46,6 +46,8 @@ INSTALLED_APPS = [
     'api',
     # Instalar django rest framework
     'rest_framework',
+    # la siguiete app es para documentar
+    'rest_framework_swagger',
     # Aqui las apps del proyecto
     'votacion'
 ]
